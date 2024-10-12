@@ -3,3 +3,5 @@
 /.config/pulse
 /.config/Thunar
 /.config/xfce4
+/.tmux/plugins/tpm
+/.config/dconf
