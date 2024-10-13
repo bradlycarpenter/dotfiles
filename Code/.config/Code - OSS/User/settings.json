@@ -1,0 +1,173 @@
+{
+    // Defaults
+    "breadcrumbs.enabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontSize": 18,
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.overviewRulerBorder": true,
+    "editor.rulers": [
+        81
+    ],
+    "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.parameterHints.enabled": false,
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.editor.showTabs": "none",
+    // Auto Close
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingComments": "never",
+    "editor.autoClosingQuotes": "never",
+    //Git
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    // Hide Recommended Extension Prompts
+    "extensions.ignoreRecommendations": true,
+    // Zen
+    "zenMode.hideLineNumbers": false,
+    "zenMode.centerLayout": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.fullScreen": false,
+    "zenMode.showTabs": "none",
+    // Terminal
+    "terminal.integrated.focusAfterRun": "terminal",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.external.linuxExec": "bash",
+    // Debug
+    "debug.internalConsoleOptions": "neverOpen",
+    "debug.openDebug": "neverOpen",
+    "debug.showInStatusBar": "always",
+    "debug.toolBarLocation": "commandCenter",
+    "debug.terminal.clearBeforeReusing": true,
+    "debug.onTaskErrors": "showErrors",
+    // Vim
+    "vim.leader": "<Space>",
+    "vim.useSystemClipboard": true,
+    "vim.highlightedyank.enable": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Tab Switching
+        {
+            "before": [
+                "<S-h>"
+            ],
+            "commands": [
+                ":bprevious"
+            ]
+        },
+        {
+            "before": [
+                "<S-l>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        // File and Command Searching
+        {
+            "before": [
+                "leader",
+                "s",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "s",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f",
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.togglePanel",
+                "workbench.action.terminal.focus"
+            ]
+        },
+        // Toggle Breakpoint
+        {
+            "before": [
+                "leader",
+                "b"
+            ],
+            "commands": [
+                "editor.debug.action.toggleBreakpoint"
+            ]
+        }
+    ],
+    // Language Specifics
+    // CPP
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.tabSize": 2
+    },
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    // HTML
+    "editor.suggest.insertMode": "replace",
+    "editor.linkedEditing": true,
+    "liveServer.settings.donotVerifyTags": true,
+    // Python
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "80"
+    ],
+    // Godot
+    "[gdscript]": {
+        "editor.defaultFormatter": "poeticAndroid.pretty-gd"
+    },
+    "godotTools.editorPath.godot4": "",
+    "settingsSync.ignoredSettings": [
+        "godotTools.editorPath.godot4"
+    ],
+    // Miscellaneous 
+    "settingsSync.keybindingsPerPlatform": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.restoreWindows": "none",
+    "window.newWindowProfile": "Default",
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
+    },
+    "workbench.sideBar.location": "right",
+    "git.openRepositoryInParentFolders": "always",
+}
