@@ -19,9 +19,9 @@
     "editor.suggestOnTriggerCharacters": false,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.parameterHints.enabled": false,
-    "window.titleBarStyle": "custom",
+    "window.titleBarStyle": "native",
     "workbench.colorTheme": "Gruvbox Dark Medium",
-    "workbench.editor.showTabs": "none",
+    "workbench.editor.showTabs": "multiple",
     // Auto Close
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingComments": "never",
@@ -46,7 +46,7 @@
     "debug.internalConsoleOptions": "neverOpen",
     "debug.openDebug": "neverOpen",
     "debug.showInStatusBar": "always",
-    "debug.toolBarLocation": "commandCenter",
+    "debug.toolBarLocation": "floating",
     "debug.terminal.clearBeforeReusing": true,
     "debug.onTaskErrors": "showErrors",
     // Vim
@@ -170,4 +170,6 @@
     },
     "workbench.sideBar.location": "right",
     "git.openRepositoryInParentFolders": "always",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.menuBarVisibility": "toggle",
 }
