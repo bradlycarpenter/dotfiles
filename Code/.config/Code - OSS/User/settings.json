@@ -154,7 +154,7 @@
     ],
     // Godot
     "[gdscript]": {
-        "editor.defaultFormatter": "poeticAndroid.pretty-gd"
+        "editor.defaultFormatter": "geequlim.godot-tools"
     },
     "godotTools.editorPath.godot4": "",
     "settingsSync.ignoredSettings": [
