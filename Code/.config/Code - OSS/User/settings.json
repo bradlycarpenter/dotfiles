@@ -19,7 +19,7 @@
     "editor.suggestOnTriggerCharacters": false,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.parameterHints.enabled": false,
-    "window.titleBarStyle": "native",
+    "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.editor.showTabs": "multiple",
     // Auto Close
@@ -171,5 +171,4 @@
     "workbench.sideBar.location": "right",
     "git.openRepositoryInParentFolders": "always",
     "workbench.iconTheme": "material-icon-theme",
-    "window.menuBarVisibility": "toggle",
 }
