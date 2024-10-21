@@ -42,11 +42,12 @@
     "terminal.integrated.focusAfterRun": "terminal",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font",
     "terminal.external.linuxExec": "bash",
+    "terminal.integrated.tabs.enabled": false,
     // Debug
     "debug.internalConsoleOptions": "neverOpen",
     "debug.openDebug": "neverOpen",
     "debug.showInStatusBar": "always",
-    "debug.toolBarLocation": "floating",
+    "debug.toolBarLocation": "commandCenter",
     "debug.terminal.clearBeforeReusing": true,
     "debug.onTaskErrors": "showErrors",
     // Vim
