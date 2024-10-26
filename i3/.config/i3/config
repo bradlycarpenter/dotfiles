@@ -42,7 +42,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
 
 # Wallpaper
-exec --no-startup-id feh --bg-center ~/Wallpapers/berserk.jpg
+exec --no-startup-id feh --bg-center ~/Wallpapers/1920x1080-dark-archlinux2.png
 
 # Spotify
 exec --no-startup-id spotifyd

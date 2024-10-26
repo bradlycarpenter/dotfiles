@@ -1,11 +1,11 @@
+# Font
 [font]
-size = 14
+size = 9
 
 [font.normal]
 family = "FiraCode Nerd Font"
 
 # Colors (Gruvbox dark)
-
 # Default colors
 [colors.primary]
 # hard contrast background = = '#1d2021'
