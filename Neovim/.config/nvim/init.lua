@@ -10,6 +10,14 @@ vim.opt.colorcolumn = '81'
 vim.opt.signcolumn = 'yes'
 vim.api.nvim_create_augroup('FileTypeIndent', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'cs',
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.expandtab = true
+  end,
+})
+vim.api.nvim_create_autocmd('FileType', {
   pattern = 'python',
   callback = function()
     vim.opt_local.shiftwidth = 4
@@ -66,6 +74,7 @@ vim.opt.inccommand = 'split'
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '\\', ':Explore<CR>', { noremap = true, silent = true })
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
