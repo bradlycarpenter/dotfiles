@@ -3,15 +3,24 @@ general {
 }
 
 order += "battery 0"
+order += "battery 1"
 order += "tztime local"
 
 battery 0 {
-	last_full_capacity = true
-	integer_battery_capacity = true
-        format = "%status %percentage "
-        format_down = ""
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
+        format = "%status %percentage %remaining"
+        hide_seconds = true
+        path = /sys/class/power_supply/BAT0/uevent
+        status_unk = BAT0
+        status_bat = BAT0
+
+}
+
+battery 1 {
+        format = "%status %percentage %remaining"
+        hide_seconds = true
+        path = /sys/class/power_supply/BAT1/uevent
+        status_unk = BAT1
+        status_bat = BAT1
 }
 
 tztime local {
