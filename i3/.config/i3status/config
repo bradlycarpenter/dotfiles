@@ -2,7 +2,6 @@ general {
          interval = 60
 }
 
-order += "battery 0"
 order += "battery 1"
 order += "tztime local"
 
@@ -16,7 +15,7 @@ battery 0 {
 }
 
 battery 1 {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage"
         hide_seconds = true
         path = /sys/class/power_supply/BAT1/uevent
         status_unk = BAT1
@@ -24,6 +23,6 @@ battery 1 {
 }
 
 tztime local {
-	format = " %A %e.%B   %H:%M"
+	format = "%e.%B %H:%M"
         hide_if_equals_localtime = false
 }
