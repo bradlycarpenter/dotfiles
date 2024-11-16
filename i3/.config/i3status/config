@@ -2,30 +2,38 @@ general {
          interval = 60
 }
 
-order += "battery 0"
+order += "volume master"
+#order += "battery 0"
 order += "battery 1"
 order += "tztime local"
 
 battery 0 {
         format = "%status %percentage"
         hide_seconds = true
-        path = /sys/class/power_supply/BAT0/uevent
-	last_full_capacity = true
+        path = /sys/class/power_supply/BAT0/uevent 
+        last_full_capacity = true
         status_unk = BAT0
         status_bat = BAT0
+}
 
+volume master {
+        format = "VOL %volume"
+        format_muted = "MUTE"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
 battery 1 {
         format = "%status %percentage"
         hide_seconds = true
-        path = /sys/class/power_supply/BAT1/uevent
-	last_full_capacity = true
+        path = /sys/class/power_supply/BAT1/uevent 
+        last_full_capacity = true
         status_unk = BAT1
         status_bat = BAT1
 }
 
 tztime local {
-	format = "%e.%B %H:%M"
+        format = "%e.%m|%H:%M"
         hide_if_equals_localtime = false
 }
