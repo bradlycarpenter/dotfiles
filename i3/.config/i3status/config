@@ -5,7 +5,8 @@ general {
 order += "volume master"
 #order += "battery 0"
 order += "battery 1"
-order += "tztime local"
+order += "tztime local1"
+order += "tztime local2"
 
 battery 0 {
         format = "%status %percentage"
@@ -33,7 +34,10 @@ battery 1 {
         status_bat = BAT1
 }
 
-tztime local {
-        format = "%e.%m|%H:%M"
-        hide_if_equals_localtime = false
+tztime local1 {
+        format = "DATE %e.%m"
+}
+
+tztime local2 {
+        format = "TIME %H:%M"
 }
