@@ -5,7 +5,7 @@ local is_windows = wezterm.target_triple:find("windows") ~= nil
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("FiraCode Nerd Font")
-config.font_size = 14.0
+config.font_size = 14
 config.window_decorations = "TITLE|RESIZE"
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "AlwaysPrompt"
@@ -16,6 +16,7 @@ if is_windows then
 else
 	config.default_prog = { "zsh" }
 end
+
 config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
 
@@ -38,6 +39,28 @@ config.keys = {
 	{ key = "&", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
 	{ key = "d", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+	{
+		key = "i",
+		mods = "ALT",
+		action = wezterm.action.ActivateTabRelative(-1),
+	},
+	-- Navigate to the right tab
+	{
+		key = "o",
+		mods = "ALT",
+		action = wezterm.action.ActivateTabRelative(1),
+	},
+	{
+		key = "i",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.MoveTabRelative(-1),
+	},
+	-- Navigate to the right tab
+	{
+		key = "o",
+		mods = "ALT|SHIFT",
+		action = wezterm.action.MoveTabRelative(1),
+	},
 }
 
 smart_splits.apply_to_config(config)
