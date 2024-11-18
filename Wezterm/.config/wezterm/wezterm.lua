@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 local smart_splits = wezterm.plugin.require('https://github.com/mrjones2014/smart-splits.nvim')
 local config = wezterm.config_builder()
+local is_windows = wezterm.target_triple:find("windows") ~= nil
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("FiraCode Nerd Font")
@@ -8,7 +9,13 @@ config.font_size = 14.0
 config.window_decorations = "TITLE|RESIZE"
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "AlwaysPrompt"
-config.default_prog = { "powershell.exe" }
+
+if is_windows then
+  config.default_prog = { "powershell.exe" }
+else
+  config.default_prog = { "zsh" }
+
+end
 config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
 
