@@ -81,6 +81,9 @@ vim.opt.scrolloff = 10
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Open netrw
+vim.keymap.set('n', '\\', ':Explore<CR>', { noremap = true, silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -147,30 +150,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'HiPhish/rainbow-delimiters.nvim',
-  {
-    'romgrk/barbar.nvim',
-    dependencies = {
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    },
-    init = function()
-      vim.g.barbar_auto_setup = false
-    end,
-    opts = {
-      auto_hide = 1,
-      clickable = true,
-      focus_on_close = 'left',
-    },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
 
-    -- Move to previous/next buffer
-    vim.keymap.set('n', 'H', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true }), -- Shift+H for previous buffer
-    vim.keymap.set('n', 'L', '<Cmd>BufferNext<CR>', { noremap = true, silent = true }), -- Shift+L for next buffer
-    -- Open a new tab with <leader>t n
-    vim.keymap.set('n', '<leader>Tc', '<Cmd>tabnew<CR>', { noremap = true, silent = true, desc = '[C]reate Tab' }),
-    -- Close the current tab with <leader>t c
-    vim.keymap.set('n', '<leader>Tx', '<Cmd>BufferClose<CR>', { noremap = true, silent = true, desc = 'E[x]it Tab' }),
-  },
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -869,10 +849,10 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

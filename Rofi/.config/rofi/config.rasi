@@ -1,5 +1,4 @@
 configuration {
 	font: "FiraCode Nerd Font Mono 12";
-	show-icons: true;
 }
 @theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
