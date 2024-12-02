@@ -7,6 +7,7 @@ config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = 14
 config.window_decorations = "TITLE|RESIZE"
+config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "AlwaysPrompt"
 config.term = "wezterm"
@@ -24,7 +25,7 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
 	{ key = "v", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	{ key = "s", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	{ key = "h", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
 	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 	{ key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
@@ -63,5 +64,11 @@ config.keys = {
 	},
 }
 
-smart_splits.apply_to_config(config)
+smart_splits.apply_to_config(config, {
+  direction_keys = { 'h', 'j', 'k', 'l' },
+  modifiers = {
+    move = 'CTRL', -- modifier to use for pane movement, e.g. CTRL+h to move left
+    resize = 'ALT', -- modifier to use for pane resize, e.g. ALT+h to resize to the left
+  },
+})
 return config

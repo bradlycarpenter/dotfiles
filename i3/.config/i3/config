@@ -77,7 +77,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'FiraCode Nerd Font-10' -nb '#282828' -nf '#fbf1c7' -sb '#fabd2f' -sf '#282828'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'FiraCode Nerd Font-12' -nb '#282828' -nf '#fbf1c7' -sb '#fabd2f' -sf '#282828'
 
 # change focus
 bindsym $mod+h focus left
