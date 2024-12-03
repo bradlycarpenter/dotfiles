@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
+-- local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 local config = wezterm.config_builder()
 local is_windows = wezterm.target_triple:find("windows") ~= nil
 
@@ -64,11 +64,11 @@ config.keys = {
 	},
 }
 
-smart_splits.apply_to_config(config, {
-  direction_keys = { 'h', 'j', 'k', 'l' },
-  modifiers = {
-    move = 'CTRL', -- modifier to use for pane movement, e.g. CTRL+h to move left
-    resize = 'ALT', -- modifier to use for pane resize, e.g. ALT+h to resize to the left
-  },
-})
+-- smart_splits.apply_to_config(config, {
+--   direction_keys = { 'h', 'j', 'k', 'l' },
+--   modifiers = {
+--     move = 'CTRL', -- modifier to use for pane movement, e.g. CTRL+h to move left
+--     resize = 'ALT', -- modifier to use for pane resize, e.g. ALT+h to resize to the left
+--   },
+-- })
 return config
