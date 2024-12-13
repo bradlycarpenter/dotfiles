@@ -70,7 +70,7 @@ ZSH_THEME="fwalch"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+plugins=(git zsh-autosuggestions fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,6 +86,19 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
+
+zmodload zsh/datetime
+
+preexec() {
+  start_time=$EPOCHREALTIME
+}
+
+precmd() {
+  if [[ -n $start_time ]]; then
+    elapsed_time=$(printf "%.3f" "$(bc <<< "$EPOCHREALTIME - $start_time")")
+    echo "Command took ${elapsed_time}s"
+  fi
+}
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
