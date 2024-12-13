@@ -1,9 +1,12 @@
 # Font
 [font]
-size = 9
+size = 12
 
 [font.normal]
 family = "FiraCode Nerd Font"
+
+[env]
+term = "xterm-256color"
 
 # Colors (Gruvbox dark)
 # Default colors

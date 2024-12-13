@@ -111,6 +111,7 @@ precmd() {
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
+export TERM=alacritty
 export PATH=$PATH:$HOME/.cargo/bin/
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="$HOME/.nvm/versions/node/v22.11.0/bin:$PATH"
