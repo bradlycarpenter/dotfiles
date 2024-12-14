@@ -1,6 +1,9 @@
 # Font
 [font]
-size = 9
+size = 12
+
+[env]
+term = "xterm-256color"
 
 [font.normal]
 family = "FiraCode Nerd Font"
