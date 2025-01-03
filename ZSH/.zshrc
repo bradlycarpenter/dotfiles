@@ -87,18 +87,6 @@ else
   export EDITOR='nvim'
 fi
 
-zmodload zsh/datetime
-
-preexec() {
-  start_time=$EPOCHREALTIME
-}
-
-precmd() {
-  if [[ -n $start_time ]]; then
-    elapsed_time=$(printf "%.3f" "$(bc <<< "$EPOCHREALTIME - $start_time")")
-    echo "Command took ${elapsed_time}s"
-  fi
-}
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
