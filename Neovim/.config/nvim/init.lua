@@ -5,6 +5,14 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.termguicolors = true
 
+vim.g.neovide_title_background_color = '#282828'
+vim.g.neovide_position_animation_length = 0
+vim.g.neovide_scroll_animation_length = 0
+vim.g.neovide_scroll_animation_far_lines = 0
+vim.g.neovide_cursor_animation_length = 0
+
+vim.g.neovide_refresh_rate = 140
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
