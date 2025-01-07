@@ -9,6 +9,7 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 -- config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "AlwaysPrompt"
+config.default_prog = { 'C:\\w64devkit\\w64devkit.exe' }
 
 config.window_frame = {
   -- The font used in the tab bar.

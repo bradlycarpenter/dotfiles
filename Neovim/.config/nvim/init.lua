@@ -10,6 +10,7 @@ vim.g.neovide_position_animation_length = 0
 vim.g.neovide_scroll_animation_length = 0
 vim.g.neovide_scroll_animation_far_lines = 0
 vim.g.neovide_cursor_animation_length = 0
+vim.o.guifont = 'FiraCode Nerd Font:h14'
 
 vim.g.neovide_refresh_rate = 140
 
@@ -159,6 +160,16 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'HiPhish/rainbow-delimiters.nvim',
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
