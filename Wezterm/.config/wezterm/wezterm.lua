@@ -9,102 +9,102 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 -- config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "AlwaysPrompt"
-config.default_prog = { 'C:\\w64devkit\\w64devkit.exe' }
+-- config.default_prog = { "C:\\archlinux\\Arch.exe" }
 
 config.window_frame = {
-  -- The font used in the tab bar.
-  -- Roboto Bold is the default; this font is bundled
-  -- with wezterm.
-  -- Whatever font is selected here, it will have the
-  -- main font setting appended to it to pick up any
-  -- fallback fonts you may have used there.
-  font = wezterm.font { family = 'FiraCode Nerd Font', weight = 'Bold' },
+	-- The font used in the tab bar.
+	-- Roboto Bold is the default; this font is bundled
+	-- with wezterm.
+	-- Whatever font is selected here, it will have the
+	-- main font setting appended to it to pick up any
+	-- fallback fonts you may have used there.
+	font = wezterm.font({ family = "FiraCode Nerd Font", weight = "Bold" }),
 
-  -- The size of the font in the tab bar.
-  -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 12.0,
+	-- The size of the font in the tab bar.
+	-- Default to 10.0 on Windows but 12.0 on other systems
+	font_size = 12.0,
 
-  -- The overall background color of the tab bar when
-  -- the window is focused
-  active_titlebar_bg = '#333333',
+	-- The overall background color of the tab bar when
+	-- the window is focused
+	active_titlebar_bg = "#333333",
 
-  -- The overall background color of the tab bar when
-  -- the window is not focused
-  inactive_titlebar_bg = '#333333',
+	-- The overall background color of the tab bar when
+	-- the window is not focused
+	inactive_titlebar_bg = "#333333",
 }
 
 config.colors = {
-  tab_bar = {
-    -- The color of the strip that goes along the top of the window
-    -- (does not apply when fancy tab bar is in use)
-    background = '#282828',
+	tab_bar = {
+		-- The color of the strip that goes along the top of the window
+		-- (does not apply when fancy tab bar is in use)
+		background = "#282828",
 
-    -- The active tab is the one that has focus in the window
-    active_tab = {
-      -- The color of the background area for the tab
-      bg_color = '#ebdbb2',
-      -- The color of the text for the tab
-      fg_color = '#2b2a2a',
+		-- The active tab is the one that has focus in the window
+		active_tab = {
+			-- The color of the background area for the tab
+			bg_color = "#ebdbb2",
+			-- The color of the text for the tab
+			fg_color = "#2b2a2a",
 
-      -- Specify whether you want "Half", "Normal" or "Bold" intensity for the
-      -- label shown for this tab.
-      -- The default is "Normal"
-      intensity = 'Normal',
+			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
+			-- label shown for this tab.
+			-- The default is "Normal"
+			intensity = "Normal",
 
-      -- Specify whether you want "None", "Single" or "Double" underline for
-      -- label shown for this tab.
-      -- The default is "None"
-      underline = 'None',
+			-- Specify whether you want "None", "Single" or "Double" underline for
+			-- label shown for this tab.
+			-- The default is "None"
+			underline = "None",
 
-      -- Specify whether you want the text to be italic (true) or not (false)
-      -- for this tab.  The default is false.
-      italic = false,
+			-- Specify whether you want the text to be italic (true) or not (false)
+			-- for this tab.  The default is false.
+			italic = false,
 
-      -- Specify whether you want the text to be rendered with strikethrough (true)
-      -- or not for this tab.  The default is false.
-      strikethrough = false,
-    },
+			-- Specify whether you want the text to be rendered with strikethrough (true)
+			-- or not for this tab.  The default is false.
+			strikethrough = false,
+		},
 
-    -- Inactive tabs are the tabs that do not have focus
-    inactive_tab = {
-      bg_color = '#3c3836',
-      fg_color = '#988b79',
+		-- Inactive tabs are the tabs that do not have focus
+		inactive_tab = {
+			bg_color = "#3c3836",
+			fg_color = "#988b79",
 
-      -- The same options that were listed under the `active_tab` section above
-      -- can also be used for `inactive_tab`.
-    },
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `inactive_tab`.
+		},
 
-    -- You can configure some alternate styling when the mouse pointer
-    -- moves over inactive tabs
-    inactive_tab_hover = {
-      bg_color = '#282828',
-      fg_color = '#988b79',
-      italic = true,
+		-- You can configure some alternate styling when the mouse pointer
+		-- moves over inactive tabs
+		inactive_tab_hover = {
+			bg_color = "#282828",
+			fg_color = "#988b79",
+			italic = true,
 
-      -- The same options that were listed under the `active_tab` section above
-      -- can also be used for `inactive_tab_hover`.
-    },
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `inactive_tab_hover`.
+		},
 
-    -- The new tab button that let you create new tabs
-    new_tab = {
-      bg_color = '#282828',
-      fg_color = '#998c79',
+		-- The new tab button that let you create new tabs
+		new_tab = {
+			bg_color = "#282828",
+			fg_color = "#998c79",
 
-      -- The same options that were listed under the `active_tab` section above
-      -- can also be used for `new_tab`.
-    },
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `new_tab`.
+		},
 
-    -- You can configure some alternate styling when the mouse pointer
-    -- moves over the new tab button
-    new_tab_hover = {
-      bg_color = '#282828',
-      fg_color = '#998c79',
-      italic = true,
+		-- You can configure some alternate styling when the mouse pointer
+		-- moves over the new tab button
+		new_tab_hover = {
+			bg_color = "#282828",
+			fg_color = "#998c79",
+			italic = true,
 
-      -- The same options that were listed under the `active_tab` section above
-      -- can also be used for `new_tab_hover`.
-    },
-  },
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `new_tab_hover`.
+		},
+	},
 }
 
 config.hide_tab_bar_if_only_one_tab = false
