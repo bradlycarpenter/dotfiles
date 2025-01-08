@@ -42,7 +42,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/Wallpapers/berserk.jpg
+exec --no-startup-id feh --bg-scale ~/Wallpapers/nasa.png
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
