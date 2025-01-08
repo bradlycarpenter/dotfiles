@@ -2,3 +2,5 @@
 /Code/.config/Code - OSS
 /TMUX/.tmux/plugins
 Neovim/.config/nvim/lazy-lock.json
+Spicetify/.config/spicetify/Backup
+Spicetify/.config/spicetify/Extracted

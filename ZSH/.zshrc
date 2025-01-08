@@ -106,3 +106,5 @@ export PATH="$HOME/.nvm/versions/node/v22.11.0/bin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PATH=$PATH:/home/sins/.spicetify
