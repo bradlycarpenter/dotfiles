@@ -1,4 +1,4 @@
-# Things To Do On A Fresh Arch Install
+# Things to Do on a Fresh Arch Install
 
 - Install And Configure *UPower* For Hibernation On Low Power
 - Modify Logind To Enable Hibernation When Lid Is Closed
