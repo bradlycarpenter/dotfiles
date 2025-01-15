@@ -7,6 +7,7 @@ config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = 14
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 -- config.tab_bar_at_bottom = true
+config.max_fps = 143
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "AlwaysPrompt"
 -- config.default_prog = { "C:\\archlinux\\Arch.exe" }
