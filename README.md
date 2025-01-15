@@ -4,6 +4,7 @@
 - Modify Logind To Enable Hibernation When Lid Is Closed
 - Install `xdg-desktop-portal-gtk` For Browser Based Authentication Of Applications
 - Configure Autorandr To Allow Monitor Switching When Docked
+- Configure Touchpad Tapping and Correct Scrolling
 
 ## UPower
 
@@ -101,4 +102,19 @@ systemctl --user start autorandr.service
 To Ensure User Services Run Automatically, Enable The `default.target` For The User:
 ```
 sudo loginctl enable-linger $(whoami)
+```
+
+## Touchpad
+
+In `/etc/X11/xorg.conf.d/90-touchpad.conf
+
+```
+Section "InputClass"
+        Identifier "touchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "Tapping" "on"
+        Option "NaturalScrolling" "true"
+        Option "TappingButtonMap" "lrm" # 1/2/3 finger, for 3-finger middle lrm
+EndSection
 ```
