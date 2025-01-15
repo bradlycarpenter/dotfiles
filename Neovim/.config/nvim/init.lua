@@ -96,6 +96,7 @@ vim.keymap.set('n', '\\', ':Explore<CR>', { noremap = true, silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Open [D]iagnostic [F]loat' })
 
 -- Tabs
 vim.keymap.set('n', 'H', 'gT', { desc = 'Go to previous tab' }) -- Shift+H to previous tab
@@ -748,7 +749,7 @@ require('lazy').setup({
           --  Generally you don't need this, because nvim-cmp will display
           --  completions whenever it has completion options available.
           ['<C-Space>'] = cmp.mapping.complete {},
-          ['<C-o>'] = cmp.mapping.complete({}),
+          ['<C-o>'] = cmp.mapping.complete {},
 
           -- Think of <c-l> as moving to the right of your snippet expansion.
           --  So if you have a snippet that's like:
