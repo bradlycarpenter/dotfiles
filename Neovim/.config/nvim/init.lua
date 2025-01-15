@@ -96,6 +96,7 @@ vim.keymap.set('n', '\\', ':Explore<CR>', { noremap = true, silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Open [D]iagnostic [F]loat' })
 
 -- Tabs
 vim.keymap.set('n', 'H', 'gT', { desc = 'Go to previous tab' }) -- Shift+H to previous tab
