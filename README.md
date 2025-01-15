@@ -106,7 +106,7 @@ sudo loginctl enable-linger $(whoami)
 
 ## Touchpad
 
-In `/etc/X11/xorg.conf.d/90-touchpad.conf
+In `/etc/X11/xorg.conf.d/90-touchpad.conf`
 
 ```
 Section "InputClass"
