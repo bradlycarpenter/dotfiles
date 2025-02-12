@@ -30,7 +30,7 @@ vim.keymap.set('n', '<space>st', function()
   vim.cmd.term()
   vim.cmd.wincmd 'J'
   vim.api.nvim_win_set_height(0, 5)
-end, {desc = "[S]et [T]erminal"})
+end, { desc = '[S]et [T]erminal' })
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -551,11 +551,16 @@ require('lazy').setup({
 
       -- Change diagnostic symbols in the sign column (gutter)
       if vim.g.have_nerd_font then
-        local signs = { Error = '', Warn = '', Hint = '', Info = '' }
-        for type, icon in pairs(signs) do
-          local hl = 'DiagnosticSign' .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-        end
+        vim.diagnostic.config {
+          signs = {
+            text = {
+              [vim.diagnostic.severity.ERROR] = '',
+              [vim.diagnostic.severity.WARN] = '',
+              [vim.diagnostic.severity.INFO] = '',
+              [vim.diagnostic.severity.HINT] = '',
+            },
+          },
+        }
       end
 
       -- LSP servers and clients are able to communicate to each other what features they support.
