@@ -8,6 +8,9 @@ family = "FiraCode Nerd Font"
 [env]
 term = "xterm-256color"
 
+[terminal]
+shell = "/usr/bin/zsh"
+
 # Colors (Gruvbox dark)
 # Default colors
 [colors.primary]

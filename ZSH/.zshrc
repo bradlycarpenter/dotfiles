@@ -108,3 +108,7 @@ export PATH="$HOME/.nvm/versions/node/v22.11.0/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:/home/sins/.spicetify
+source /usr/share/nvm/init-nvm.sh
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
