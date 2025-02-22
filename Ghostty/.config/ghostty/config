@@ -1,2 +1,3 @@
 font-family = FiraCode Nerd Font
 theme = GruvboxDark
+command = /usr/bin/zsh --login --interactive

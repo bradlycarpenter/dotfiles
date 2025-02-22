@@ -4,12 +4,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.termguicolors = true
-
--- ejs fix
-vim.treesitter.language.register('html', 'ejs')
-vim.treesitter.language.register('javascript', 'ejs')
-vim.filetype.add { extension = { ejs = 'ejs' } }
-
 vim.g.neovide_title_background_color = '#282828'
 vim.g.neovide_position_animation_length = 0
 vim.g.neovide_scroll_animation_length = 0
@@ -690,7 +684,7 @@ require('lazy').setup({
         -- Conform can also run multiple formatters sequentially
         python = { 'black' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettier', 'prettierd', stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
