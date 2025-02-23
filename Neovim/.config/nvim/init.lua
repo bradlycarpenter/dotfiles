@@ -98,6 +98,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Ejs support
+vim.filetype.add { extension = { ejs = 'ejs' } }
+vim.treesitter.language.register('html', 'ejs')
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
