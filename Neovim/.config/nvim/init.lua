@@ -38,6 +38,13 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
+-- Start terminal in insert mode
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.cmd "startinsert!"
+  end,
+})
+
 -- Enable break indent
 vim.opt.breakindent = true
 
