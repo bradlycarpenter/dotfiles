@@ -259,9 +259,9 @@ return {
         'black', -- Python formatter
 
         -- LSPs (if not covered by mason-lspconfig)
-        'csharp_ls',
-        'csharpier',
-        'gdtoolkit',
+        -- 'csharp_ls',
+        -- 'csharpier',
+        -- 'gdtoolkit',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
