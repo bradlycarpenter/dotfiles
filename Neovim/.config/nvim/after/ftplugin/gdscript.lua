@@ -1,12 +1,11 @@
-local port = os.getenv('GDScript_Port') or '6005'
-local cmd = vim.lsp.rpc.connect('127.0.0.1', port)
-local pipe = '/tmp/godot.pipe' -- I use /tmp/godot.pipe
+vim.bo.shiftwidth = 4
+vim.bo.tabstop = 4
+vim.bo.softtabstop = 4
+vim.bo.expandtab = false
 
-vim.lsp.start({
+local port = tonumber(os.getenv 'GDScript_Port') or 6005
+vim.lsp.start {
   name = 'Godot',
-  cmd = cmd,
+  cmd = { 'ncat', '127.0.0.1', tostring(port) },
   root_dir = vim.fs.dirname(vim.fs.find({ 'project.godot', '.git' }, { upward = true })[1]),
-  on_attach = function(client, bufnr)
-    vim.api.nvim_command('echo serverstart("' .. pipe .. '")')
-  end
-})
+}
