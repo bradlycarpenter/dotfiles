@@ -25,6 +25,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.autopairs',
 
+  require 'kickstart.plugins.neotree',
+
   { import = 'custom.plugins' },
 }, {
   ui = {
