@@ -257,8 +257,10 @@ return {
         'prettierd', -- JS/TS formatter
         'isort', -- Python import sorter
         'black', -- Python formatter
+        'gofumpt',
 
         -- LSPs (if not covered by mason-lspconfig)
+        'gopls',
         -- 'csharp_ls',
         -- 'csharpier',
         -- 'gdtoolkit',
