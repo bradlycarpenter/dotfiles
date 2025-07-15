@@ -2,12 +2,20 @@ return {
   'pmizio/typescript-tools.nvim',
   dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
   opts = {
-    on_attach = function()
-      -- your on_attach logic here
+    on_attach = function(client, bufnr)
+      -- Clear any previous gd mappings
+      vim.api.nvim_buf_del_keymap(bufnr, 'n', 'gd')
+
+      -- Remap gd to TSToolsGoToSourceDefinition
+      vim.api.nvim_buf_set_keymap(
+        bufnr,
+        'n',
+        'gd',
+        '<cmd>TSToolsGoToSourceDefinition<CR>',
+        { noremap = true, silent = true }
+      )
     end,
-    handlers = {
-      -- your LSP handlers here
-    },
+    handlers = {},
     settings = {
       separate_diagnostic_server = true,
       publish_diagnostic_on = 'insert_leave',
@@ -29,3 +37,4 @@ return {
     },
   },
 }
+
