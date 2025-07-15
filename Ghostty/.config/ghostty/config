@@ -1,2 +1,1 @@
-theme = GruvboxDark
-shell-integration = bash
+app-notifications = no-clipboard-copy
