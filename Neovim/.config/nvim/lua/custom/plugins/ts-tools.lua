@@ -4,16 +4,6 @@ return {
   opts = {
     on_attach = function(client, bufnr)
       -- Clear any previous gd mappings
-      vim.api.nvim_buf_del_keymap(bufnr, 'n', 'gd')
-
-      -- Remap gd to TSToolsGoToSourceDefinition
-      vim.api.nvim_buf_set_keymap(
-        bufnr,
-        'n',
-        'gd',
-        '<cmd>TSToolsGoToSourceDefinition<CR>',
-        { noremap = true, silent = true }
-      )
     end,
     handlers = {},
     settings = {
@@ -37,4 +27,3 @@ return {
     },
   },
 }
-

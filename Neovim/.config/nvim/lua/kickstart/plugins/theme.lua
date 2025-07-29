@@ -1,17 +1,14 @@
 return {
   {
-    'loctvl842/monokai-pro.nvim',
-    name = 'monokai-pro',
+    'Shatur/neovim-ayu',
+    name = 'ayu',
     lazy = false,
     priority = 1000,
     config = function()
-      require('monokai-pro').setup {
-        transparent_background = true,
-        terminal_colors = true,
-        devicons = true,
-        filter = 'spectrum',
+      require('ayu').setup {
+        terminal = true,
       }
-      vim.cmd.colorscheme 'monokai-pro'
+      vim.cmd.colorscheme 'ayu'
     end,
   },
 }

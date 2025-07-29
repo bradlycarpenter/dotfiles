@@ -19,9 +19,9 @@ vim.o.colorcolumn = '81'
 vim.o.tabstop = 2
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
-end)
+-- vim.schedule(function()
+--   vim.o.clipboard = 'unnamedplus'
+-- end)
 
 require 'config.neovide'
 
