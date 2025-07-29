@@ -1,11 +1,1 @@
-theme = "gruvbox"
-
-[editor]
-line-number = "relative"
-auto-pairs = false # defaults to `true`
-
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
-
+theme = 'ayu_dark'
