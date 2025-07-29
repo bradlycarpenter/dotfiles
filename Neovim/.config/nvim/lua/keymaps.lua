@@ -44,7 +44,4 @@ vim.keymap.set('n', '<leader>lg', require('config.lazygit').toggle, {
   silent = true,
 })
 
--- Open Netrw
-vim.keymap.set("n", "\\", ":Neotree toggle<CR>", { desc = "Toggle Neotree file explorer" })
-
 -- vim: ts=2 sts=2 sw=2 et
