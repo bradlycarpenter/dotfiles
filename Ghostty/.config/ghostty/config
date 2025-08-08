@@ -1,2 +1,3 @@
 app-notifications = no-clipboard-copy
-theme = ayu
+theme = dark:Monokai Pro Spectrum,light:Monokai Pro Light
+cursor-invert-fg-bg = true
