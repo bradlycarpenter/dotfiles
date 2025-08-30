@@ -4,7 +4,8 @@ session_root "~/Code/mcp_warp"
 if initialize_session "mcp"; then
 
   new_window "dev"
-  run_cmd "cd mcp_golang && fresh"
+  run_cmd "cd mcp_golang"
+  run_cmd "fresh"
   
   new_window "lazygit"
   run_cmd "lazygit"
