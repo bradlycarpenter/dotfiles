@@ -14,7 +14,7 @@ if initialize_session "mcp"; then
   run_cmd "lazysql"
   
   new_window "ai"
-  run_cmd "claude"
+  run_cmd "gemini"
 
   select_window 0
 fi

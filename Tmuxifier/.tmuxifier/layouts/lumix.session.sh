@@ -9,6 +9,7 @@ if initialize_session "lumix"; then
 	run_cmd "npm run dev"
 	split_h
 	run_cmd "npm run studio"
+	select_pane 0
 
 	# Separate windows approach
 	new_window "lazygit"
@@ -17,6 +18,7 @@ if initialize_session "lumix"; then
 	new_window "lazydocker"
 	run_cmd "docker compose -f docker_files/docker-compose.yml up -d"
 	run_cmd "lazydocker"
+	select_window "run"
 fi
 
 # Finalize session creation and switch/attach to it.
