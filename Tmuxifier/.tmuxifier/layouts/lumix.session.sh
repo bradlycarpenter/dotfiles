@@ -1,9 +1,5 @@
-# Set a custom session root path. Default is `$HOME`.
-# Must be called before `initialize_session`.
 session_root "~/Code/lumix/serverless/"
 
-# Create session with specified name if it does not already exist. If no
-# argument is given, session name will be based on layout file name.
 if initialize_session "lumix"; then
 	new_window "run"	
 	run_cmd "npm run dev"
@@ -21,5 +17,4 @@ if initialize_session "lumix"; then
 	select_window "run"
 fi
 
-# Finalize session creation and switch/attach to it.
 finalize_and_go_to_session
