@@ -3,11 +3,30 @@
 {
    home.packages = with pkgs; [
      vim
+     tmux
      git
+     gh
      kitty
+     btop
+     yazi
+     lazygit
      stow
      firefox
      bitwarden-desktop
+     lua
+     gcc
+     gnumake
+     unzip
+     fd
+     ripgrep
+     nodejs
+     pnpm
+     go
+     python3
+     uv
+     dotnet-sdk
+     neovim
+     tree-sitter
      pkgs.nerd-fonts.jetbrains-mono
    ];
 
@@ -18,7 +37,7 @@
 
     font = {
       name = "JetBrainsMono Nerd Font";
-      size = 11;
+      size = 12;
     };
   };
 
