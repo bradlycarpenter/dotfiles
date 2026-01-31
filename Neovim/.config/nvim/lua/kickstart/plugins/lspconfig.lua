@@ -261,6 +261,7 @@ return {
 
         -- LSPs (if not covered by mason-lspconfig)
         'gopls',
+        'vtsls',
         -- 'csharp_ls',
         -- 'csharpier',
         -- 'gdtoolkit',
