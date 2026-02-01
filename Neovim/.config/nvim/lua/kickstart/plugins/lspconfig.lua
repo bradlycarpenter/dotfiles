@@ -221,20 +221,20 @@ return {
         -- ts_ls = {},
         --
 
-        lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
+        -- lua_ls = {
+        --   -- cmd = { ... },
+        --   -- filetypes = { ... },
+        --   -- capabilities = {},
+        --   settings = {
+        --     Lua = {
+        --       completion = {
+        --         callSnippet = 'Replace',
+        --       },
+        --       -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+        --       diagnostics = { disable = { 'missing-fields' } },
+        --     },
+        --   },
+        -- },
       }
 
       -- Ensure the servers and tools above are installed
@@ -253,14 +253,14 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         -- Formatters & Tools
-        'stylua', -- Lua formatter
+        -- 'stylua', -- Lua formatter
         'prettierd', -- JS/TS formatter
-        'isort', -- Python import sorter
-        'black', -- Python formatter
-        'gofumpt',
+        -- 'isort', -- Python import sorter
+        -- 'black', -- Python formatter
+        -- 'gofumpt',
 
         -- LSPs (if not covered by mason-lspconfig)
-        'gopls',
+        -- 'gopls',
         'vtsls',
         -- 'csharp_ls',
         -- 'csharpier',

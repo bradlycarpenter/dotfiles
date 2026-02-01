@@ -21,7 +21,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/treesitter',
 
-  require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.lint',
 
   require 'kickstart.plugins.autopairs',
 
