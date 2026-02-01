@@ -6,6 +6,7 @@ return {
     priority = 1000,
     config = function()
       require('monokai-pro').setup {
+        transparent_background = true,
         day_night = {
           enable = true,
           day_filter = 'pro',
