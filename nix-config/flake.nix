@@ -8,16 +8,20 @@
   };
 
   outputs = { self, nixpkgs, nixos-wsl, ... }:
-  let
-    system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations = {
-      inherit system;
-      modules = [
-        nixos-wsl.nixosModules.default
-	./hosts/wsl
-      ];
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations = {
+        wsl = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            nixos-wsl.nixosModules.default
+            ./hosts/wsl
+            ./modules/cli.nix
+          ];
+        };
+      };
     };
-  };
 }
+
