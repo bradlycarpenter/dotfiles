@@ -3,11 +3,9 @@
 {
   home.packages = with pkgs; [
     vim
-    tmux
     git
     gh
     kitty
-    btop
     yazi
     lazygit
     stow
@@ -31,6 +29,18 @@
   ];
 
   programs.bash.enable = true;
+
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    mouse = true;
+  };
+
+  programs.btop = {
+    enable = true;
+
+    settings = { color_theme = "monokai"; };
+  };
 
   programs.kitty = {
     enable = true;

@@ -6,6 +6,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   hardware.graphics.enable = true;
+
   services.xserver.videoDrivers = [ "modesetting" ];
 
   users.users.${username} = {
