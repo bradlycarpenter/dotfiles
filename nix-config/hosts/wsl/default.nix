@@ -3,7 +3,7 @@
 {
   wsl.enable = true;
   wsl.defaultUser = username;
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
    
   users.users.${username} = {
     isNormalUser = true;
