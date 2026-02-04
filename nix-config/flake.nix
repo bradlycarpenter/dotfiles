@@ -19,12 +19,10 @@
       nixosConfigurations = {
         wsl = nixpkgs.lib.nixosSystem {
           inherit system;
-	  specialArgs = {
-	    inherit username;
-	  };
+          specialArgs = { inherit username; };
           modules = [
             nixos-wsl.nixosModules.default
-	    home-manager.nixosModules.default
+            home-manager.nixosModules.default
             ./hosts/wsl
             ./modules/common
             ./modules/cli
@@ -33,11 +31,9 @@
 
         sway = nixpkgs.lib.nixosSystem {
           inherit system;
-	  specialArgs = {
-	    inherit username;
-	  };
+          specialArgs = { inherit username; };
           modules = [
-	    home-manager.nixosModules.default
+            home-manager.nixosModules.default
             ./hosts/sway
             ./modules/common
             ./modules/cli

@@ -1,10 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  imports = [
-    ./neovim.nix
-  ];
+  imports = [ ./neovim.nix ];
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 }
 
