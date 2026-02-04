@@ -1,10 +1,7 @@
-{ ... }:
+{ username, ... }:
 
 {
   wsl.enable = true;
-  wsl.defaultUser = "sins";
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  wsl.defaultUser = username;
   system.stateVersion = "25.05";
 }
