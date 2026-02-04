@@ -6,12 +6,12 @@
     nixos-wsl.url = "github:nix-community/nixos-wsl/release-25.05";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
-      url = "github:nix-community/home-manager";
-      follows = "nixpkgs";
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, nixos-wsl, ... }:
+  outputs = { home-manager, nixpkgs, nixos-wsl, ... }:
     let
       system = "x86_64-linux";
       username = "sins";
@@ -24,6 +24,7 @@
 	  };
           modules = [
             nixos-wsl.nixosModules.default
+	    home-manager.nixosModules.default
             ./hosts/wsl
             ./modules/common
             ./modules/cli
@@ -36,6 +37,7 @@
 	    inherit username;
 	  };
           modules = [
+	    home-manager.nixosModules.default
             ./hosts/sway
             ./modules/common
             ./modules/cli
