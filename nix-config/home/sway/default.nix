@@ -25,6 +25,7 @@
     dotnet-sdk
     neovim
     tree-sitter
+    zoxide
     pkgs.nerd-fonts.jetbrains-mono
   ];
 
