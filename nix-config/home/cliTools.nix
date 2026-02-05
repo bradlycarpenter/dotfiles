@@ -18,7 +18,9 @@
 
   programs.btop = {
     enable = true;
-    settings = { color_theme = "monokai"; };
+    settings = {
+      color_theme = "monokai";
+    };
   };
 
   programs.git = {

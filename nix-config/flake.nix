@@ -11,11 +11,18 @@
     };
   };
 
-  outputs = { home-manager, nixpkgs, nixos-wsl, ... }:
+  outputs =
+    {
+      home-manager,
+      nixpkgs,
+      nixos-wsl,
+      ...
+    }:
     let
       system = "x86_64-linux";
       username = "sins";
-    in {
+    in
+    {
       nixosConfigurations = {
         wsl = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -26,17 +33,20 @@
             ./modules/common
             ./modules/devTools.nix
             home-manager.nixosModules.home-manager
-            ({ ... }: {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+            (
+              { ... }:
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
 
-              home-manager.users.${username} = {
-                imports = [
-                  ./home/cliTools.nix
-                  ./home/neovim.nix
-                ];
-              };
-            })
+                home-manager.users.${username} = {
+                  imports = [
+                    ./home/cliTools.nix
+                    ./home/neovim.nix
+                  ];
+                };
+              }
+            )
           ];
         };
 
@@ -48,23 +58,25 @@
             ./modules/common
             ./modules/devTools.nix
             home-manager.nixosModules.home-manager
-            ({ ... }: {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+            (
+              { ... }:
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
 
-              home-manager.users.${username} = {
-                imports = [
-                  ./home/cliTools.nix
-                  ./home/neovim.nix
-                  ./home/sway.nix
-                  ./home/desktopApps.nix
-                ];
-              };
-            })
+                home-manager.users.${username} = {
+                  imports = [
+                    ./home/cliTools.nix
+                    ./home/neovim.nix
+                    ./home/sway.nix
+                    ./home/desktopApps.nix
+                  ];
+                };
+              }
+            )
           ];
         };
 
       };
     };
 }
-

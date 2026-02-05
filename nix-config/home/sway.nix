@@ -22,7 +22,9 @@
     config = {
       modifier = "Mod4";
       terminal = "kitty";
-      input."*" = { xkb_options = "altwin:swap_alt_win"; };
+      input."*" = {
+        xkb_options = "altwin:swap_alt_win";
+      };
       input."type:touchpad" = {
         natural_scroll = "enabled";
         tap = "enabled";

@@ -1,8 +1,11 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ 
-    vim 
+  environment.systemPackages = with pkgs; [
+    vim
   ];
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
