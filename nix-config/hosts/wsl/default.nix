@@ -7,8 +7,6 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
-
-  home-manager.users.${username} = { imports = [ ../../home/shared ]; };
 }

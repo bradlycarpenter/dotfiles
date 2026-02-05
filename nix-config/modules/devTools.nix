@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [ 
     lua
     gcc
     gnumake
@@ -10,5 +10,10 @@
     python3
     uv
     dotnet-sdk
+    nixfmt
   ];
+
+  virtualisation.docker = {
+    enable = true;
+  };
 }

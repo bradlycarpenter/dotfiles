@@ -24,6 +24,7 @@
             nixos-wsl.nixosModules.default
             ./hosts/wsl
             ./modules/common
+            ./modules/devTools.nix
             home-manager.nixosModules.home-manager
             ({ ... }: {
               home-manager.useGlobalPkgs = true;
@@ -33,7 +34,6 @@
                 imports = [
                   ./home/cliTools.nix
                   ./home/neovim.nix
-                  ./home/devTools.nix
                 ];
               };
             })
@@ -46,6 +46,7 @@
           modules = [
             ./hosts/thinkpadLaptop
             ./modules/common
+            ./modules/devTools.nix
             home-manager.nixosModules.home-manager
             ({ ... }: {
               home-manager.useGlobalPkgs = true;
@@ -55,7 +56,6 @@
                 imports = [
                   ./home/cliTools.nix
                   ./home/neovim.nix
-                  ./home/devTools.nix
                   ./home/sway.nix
                   ./home/desktopApps.nix
                 ];
