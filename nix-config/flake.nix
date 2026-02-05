@@ -33,6 +33,7 @@
                 imports = [
                   ./home/cliTools.nix
                   ./home/neovim.nix
+                  ./home/devTools.nix
                 ];
               };
             })
@@ -54,6 +55,7 @@
                 imports = [
                   ./home/cliTools.nix
                   ./home/neovim.nix
+                  ./home/devTools.nix
                   ./home/sway.nix
                   ./home/desktopApps.nix
                 ];
