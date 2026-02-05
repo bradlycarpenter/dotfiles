@@ -22,23 +22,46 @@
           specialArgs = { inherit username; };
           modules = [
             nixos-wsl.nixosModules.default
-            home-manager.nixosModules.default
             ./hosts/wsl
             ./modules/common
-            ./modules/cli
+            home-manager.nixosModules.home-manager
+            ({ ... }: {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./home/cliTools.nix
+                  ./home/neovim.nix
+                ];
+              };
+            })
           ];
         };
 
-        sway = nixpkgs.lib.nixosSystem {
+        thinkpadLaptop = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit username; };
           modules = [
-            home-manager.nixosModules.default
-            ./hosts/sway
+            ./hosts/thinkpadLaptop
             ./modules/common
-            ./modules/cli
+            home-manager.nixosModules.home-manager
+            ({ ... }: {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./home/cliTools.nix
+                  ./home/neovim.nix
+                  ./home/sway.nix
+                  ./home/desktopApps.nix
+                ];
+              };
+            })
           ];
         };
+
       };
     };
 }

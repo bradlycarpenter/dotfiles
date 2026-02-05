@@ -19,8 +19,6 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Africa/Johannesburg";
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
 
   i18n.defaultLocale = "en_ZA.UTF-8";
 
@@ -32,13 +30,7 @@
 
   security.polkit.enable = true;
 
-  home-manager.users.${username} = {
-    imports = [ ../../home/shared ../../home/sway ];
-  };
-
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [ vim ];
 
   services.openssh.enable = true;
 
