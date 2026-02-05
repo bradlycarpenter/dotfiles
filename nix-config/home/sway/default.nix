@@ -31,11 +31,6 @@
 
   programs.bash.enable = true;
 
-  programs.tmux = {
-    enable = true;
-    clock24 = true;
-    mouse = true;
-  };
 
   programs.btop = {
     enable = true;
