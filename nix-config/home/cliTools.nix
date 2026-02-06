@@ -7,9 +7,15 @@
     unzip
     fd
     ripgrep
+    tmuxifier
   ];
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      tm = "tmuxifier";
+    };
+  };
 
   programs.zoxide = {
     enable = true;
