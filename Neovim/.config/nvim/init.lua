@@ -1,6 +1,8 @@
 vim.opt.number = true
 vim.o.splitright = true
 
+-- vim.cmd.colorscheme("monokai-pro")
+
 require("auto-dark-mode").setup({
   update_interval = 3000,
   fallback = "dark",
@@ -22,4 +24,4 @@ require("auto-dark-mode").setup({
   end,
 })
 
-
+require("auto-dark-mode").init()

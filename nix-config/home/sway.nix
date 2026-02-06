@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     kitty
     pkgs.nerd-fonts.jetbrains-mono
+    darkman
   ];
 
   programs.kitty = {
@@ -13,6 +14,10 @@
       name = "JetBrainsMono Nerd Font";
       size = 12;
     };
+    
+    extraConfig = ''
+      include ./current-theme.conf
+    '';
   };
 
   wayland.windowManager.sway = {
