@@ -16,6 +16,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "video"
     ];
   };
 
@@ -51,21 +52,26 @@
 
   services.openssh.enable = true;
 
+  services.avahi.enable = true;
+
   services.gnome.gnome-keyring.enable = true;
 
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+      pkgs.darkman
     ];
 
     config.common.default = "*";
   };
 
   environment.systemPackages = with pkgs; [
-    pavucontrol
+    darkman
+    light
   ];
+
+  programs.light.enable = true;
 
   system.stateVersion = "25.11";
 }
