@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     stow
     vim
+    wget
   ];
 
   nix.settings.experimental-features = [

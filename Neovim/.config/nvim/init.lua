@@ -1,28 +1,23 @@
-vim.opt.number = true
+require('plugins')
+vim.o.number = true
 vim.o.splitright = true
+vim.o.signcolumn = "yes"
+vim.o.swapfile = false
+vim.o.relativenumber = true
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+vim.lsp.config['lua_ls'] = {
+	cmd = { 'lua-language-server' },
+	filetypes = { 'lua' },
+}
+
+vim.lsp.config['vts_ls'] = {
+	cmd = { 'vtsls', '--stdio' },
+	filetypes = { 'typescript', 'typescript-react' },
+}
+
+vim.lsp.enable({ 'vts_ls', 'lua_ls' })
 
 
-require("monokai-pro").setup({ transparent_background = true })
-
-require("auto-dark-mode").setup({
-  update_interval = 3000,
-  fallback = "dark",
-
-  set_dark_mode = function()
-    vim.opt.background = "dark"
-    require("monokai-pro").setup({
-      filter = "spectrum",
-    })
-    vim.cmd.colorscheme("monokai-pro")
-  end,
-
-  set_light_mode = function()
-    vim.opt.background = "light"
-    require("monokai-pro").setup({
-      filter = "light",
-    })
-    vim.cmd.colorscheme("monokai-pro")
-  end,
-})
-
-require("auto-dark-mode").init()
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)

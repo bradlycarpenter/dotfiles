@@ -2,9 +2,11 @@
 {
   environment.systemPackages = with pkgs; [
     lua
+    lua-language-server
     gcc
     gnumake
     nodejs
+    vtsls
     pnpm
     go
     python3
