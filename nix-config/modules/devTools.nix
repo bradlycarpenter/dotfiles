@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstablePkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     lua
@@ -14,6 +14,7 @@
     dotnet-sdk
     nixfmt
     lazydocker
+    unstablePkgs.resterm
   ];
 
   virtualisation.docker = {
