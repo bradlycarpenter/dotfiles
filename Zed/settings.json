@@ -1,0 +1,77 @@
+{
+    //----------------------------Editor Settings---------------------------------
+    "disable_ai": true,
+    "cli_default_open_behavior": "existing_window",
+    "diff_view_style": "split",
+    "diagnostics": {
+        "include_warnings": true,
+        "inline": {
+            "enabled": true
+        }
+    },
+    "buffer_font_size": 18.0,
+    "git_panel": {
+        "dock": "right",
+        "sort_by_path": false
+    },
+    "vim_mode": false,
+    "format_on_save": "off",
+    "session": {
+        "restore_unsaved_buffers": false,
+        "trust_all_worktrees": true
+    },
+    //-----------------------------------UI---------------------------------------
+    "outline_panel": {
+        "dock": "left",
+        "auto_reveal_entries": true,
+        "button": true,
+        "indent_guides": {
+            "show": "always"
+        },
+        "auto_fold_dirs": true,
+        "indent_size": 20.0,
+        "file_icons": true,
+        "expand_outlines_with_depth": 0
+    },
+    "scrollbar": {
+        "axes": {
+            "horizontal": false,
+            "vertical": false
+        },
+        "show": "auto"
+    },
+    "gutter": {
+        "folds": false,
+        "breakpoints": false,
+        "runnables": false,
+        "min_line_number_digits": 0
+    },
+    "project_panel": {
+        "auto_reveal_entries": false,
+        "folder_icons": true,
+        "file_icons": true,
+        "hide_gitignore": false,
+        "dock": "right"
+    },
+    "colorize_brackets": true,
+    "wrap_guides": [80],
+    "ui_font_family": "JetBrainsMono Nerd Font",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
+    "buffer_font_weight": 300.0,
+    "buffer_line_height": "standard",
+    "buffer_font_features": {
+        "liga": true
+    },
+    //--------------------------------Theming-------------------------------------
+    "theme": {
+        "mode": "system",
+        "light": "Zedokai Light",
+        "dark": "Zedokai (Filter Spectrum)"
+    },
+    "icon_theme": {
+        "mode": "system",
+        "light": "Colored Zed Icons Theme Light",
+        "dark": "Colored Zed Icons Theme Dark"
+    }
+    //--------------------------------Language------------------------------------
+}
