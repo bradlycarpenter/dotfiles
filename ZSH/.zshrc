@@ -20,3 +20,7 @@ export PATH=$PATH:/home/sins/.spicetify
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH="$HOME/.playwright-browsers"
