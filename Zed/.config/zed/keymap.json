@@ -10,7 +10,9 @@
     "context": "",
     "bindings": {
       "ctrl-b": "workspace::ToggleRightDock",
-      "ctrl-alt-b": "workspace::ToggleLeftDock"
+      "ctrl-alt-b": "workspace::ToggleLeftDock",
+      "cmd-b": "workspace::ToggleRightDock",
+      "cmd-shift-b": "workspace::ToggleLeftDock",
     }
   }
 ]

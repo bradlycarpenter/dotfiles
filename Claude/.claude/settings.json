@@ -1,0 +1,8 @@
+{
+  "model": "opus",
+  "enabledPlugins": {
+    "vercel@claude-plugins-official": true
+  },
+  "theme": "auto",
+  "preferredNotifChannel": "terminal_bell"
+}
