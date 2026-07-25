@@ -1,13 +1,34 @@
 {
     //----------------------------Editor Settings---------------------------------
+    "collaboration_panel": {
+        "dock": "right"
+    },
+    "debugger": {
+        "dock": "left"
+    },
+    "vim": {
+        "use_system_clipboard": "always"
+    },
     "agent": {
+        "dock": "left",
         "thinking_display": "always_collapsed",
         "favorite_models": [],
         "play_sound_when_agent_done": "when_hidden",
         "model_parameters": []
     },
     "agent_servers": {
+        "claude-acp": {
+            "default_config_options": {
+                "model": "sonnet",
+                "effort": "medium",
+                "mode": "default"
+            },
+            "type": "registry"
+        },
         "opencode": {
+            "default_config_options": {
+                "mode": "build"
+            },
             "type": "registry"
         }
     },
@@ -16,7 +37,7 @@
     "tab_size": 2,
     "disable_ai": false,
     "cli_default_open_behavior": "existing_window",
-    "diff_view_style": "split",
+    "diff_view_style": "unified",
     "diagnostics": {
         "include_warnings": true,
         "inline": {
