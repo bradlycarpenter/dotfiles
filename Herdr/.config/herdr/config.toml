@@ -1,10 +1,8 @@
 onboarding = false
 
 [theme]
-name = "gruvbox"
-auto_switch = true
-dark_name = "gruvbox"
-light_name = "gruvbox-light"
+name = "terminal"
+auto_switch = false
 
 [ui]
 agent_panel_sort = "spaces"
