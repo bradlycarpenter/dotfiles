@@ -19,14 +19,16 @@
     "agent_servers": {
         "claude-acp": {
             "default_config_options": {
-                "model": "sonnet",
+                "fast": false,
+                "model": "opus",
                 "effort": "medium",
-                "mode": "default"
+                "mode": "auto"
             },
             "type": "registry"
         },
         "opencode": {
             "default_config_options": {
+                "model": "opencode/kimi-k2.7-code",
                 "mode": "build"
             },
             "type": "registry"
