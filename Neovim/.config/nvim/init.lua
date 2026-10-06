@@ -441,6 +441,29 @@ do
     local is_dark = vim.trim(vim.fn.system { 'defaults', 'read', '-g', 'AppleInterfaceStyle' }) == 'Dark'
     vim.opt.background = is_dark and 'dark' or 'light'
     vim.cmd.colorscheme(is_dark and 'monokai-pro-spectrum' or 'monokai-pro-light')
+  else
+    -- Headless Linux (a server over SSH) has no XDG desktop portal, so
+    -- auto-dark-mode's dbus query fails and never applies a colorscheme at all.
+    -- The terminal still knows its own theme though: Nvim asks via OSC 11 and
+    -- subscribes to DEC mode 2031 theme-change notifications, then updates
+    -- 'background'. Follow that instead of hardcoding, so light/dark tracks the
+    -- terminal live over SSH. The guard stops the colorscheme (which sets
+    -- 'background' itself) from re-triggering this handler.
+    local applying = false
+    local function apply_by_background()
+      if applying then
+        return
+      end
+      applying = true
+      vim.cmd.colorscheme(vim.o.background == 'light' and 'monokai-pro-light' or 'monokai-pro-spectrum')
+      applying = false
+    end
+
+    apply_by_background()
+    vim.api.nvim_create_autocmd('OptionSet', {
+      pattern = 'background',
+      callback = apply_by_background,
+    })
   end
   -- If a nerd font is available, load the icons module for pretty icons in various plugins.
   if vim.g.have_nerd_font then
