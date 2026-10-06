@@ -1,6 +1,41 @@
 {
     //----------------------------Editor Settings---------------------------------
+    "tab_bar": {
+        "show_pinned_tabs_in_separate_row": false
+    },
+    "tabs": {
+        "file_icons": false,
+        "git_status": false
+    },
+    "terminal": {
+        "dock": "bottom"
+    },
+    "ssh_connections": [
+        {
+            "host": "warpserver",
+            "username": "brad",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/home/brad"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/brad/code/lumix"
+                    ]
+                }
+            ]
+        }
+    ],
+    "language_models": {
+        "opencode": {
+            "show_go_models": false
+        }
+    },
     "collaboration_panel": {
+        "button": false,
         "dock": "right"
     },
     "debugger": {
@@ -22,13 +57,13 @@
                 "fast": false,
                 "model": "opus",
                 "effort": "medium",
-                "mode": "auto"
+                "mode": "plan"
             },
             "type": "registry"
         },
         "opencode": {
             "default_config_options": {
-                "model": "opencode/kimi-k2.7-code",
+                "model": "opencode/deepseek-v4-pro",
                 "mode": "build"
             },
             "type": "registry"
@@ -37,7 +72,7 @@
     "show_edit_predictions": false,
     "restore_on_startup": "launchpad",
     "tab_size": 2,
-    "disable_ai": false,
+    "disable_ai": true,
     "cli_default_open_behavior": "existing_window",
     "diff_view_style": "unified",
     "diagnostics": {
@@ -49,7 +84,6 @@
     "buffer_font_size": 18.0,
     "git_panel": {
         "dock": "right",
-        "sort_by_path": false
     },
     "vim_mode": false,
     "format_on_save": "off",
@@ -84,8 +118,8 @@
         "min_line_number_digits": 0
     },
     "project_panel": {
+        "folder_indicator": "icon",
         "auto_reveal_entries": false,
-        "folder_icons": true,
         "file_icons": true,
         "hide_gitignore": false,
         "dock": "right"
