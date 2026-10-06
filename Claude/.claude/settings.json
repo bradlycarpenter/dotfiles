@@ -10,7 +10,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/bradly/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "[ ! -f ~/.claude/hooks/herdr-agent-state.sh ] || bash ~/.claude/hooks/herdr-agent-state.sh session",
             "timeout": 10
           }
         ]
@@ -19,7 +19,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "zsh '/Users/bradly/.claude/statusline-command.sh'"
+    "command": "zsh ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
