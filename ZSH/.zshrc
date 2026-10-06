@@ -16,6 +16,7 @@ PROMPT='%F{cyan}%c%f${vcs_info_msg_0_} $ '
 bindkey -e
 
 # ---- completion: minimal, cached (fixes TAB's stray trailing slash)
+[[ -d $HOME/.docker/completions ]] && fpath=("$HOME/.docker/completions" $fpath)
 autoload -Uz compinit
 compinit -C -d "$HOME/.zcompdump"
 setopt AUTO_REMOVE_SLASH
@@ -61,9 +62,16 @@ alias la='ls -A'
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+if [[ $OSTYPE == darwin* ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+# ---- per-machine extras, not tracked ----
+[[ -r $HOME/.zshrc.local ]] && source "$HOME/.zshrc.local"
