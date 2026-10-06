@@ -4,10 +4,5 @@
 Neovim/.config/nvim/lazy-lock.json
 Spicetify/.config/spicetify/Backup
 Spicetify/.config/spicetify/Extracted
-BTop/.config/btop/btop.log
 
 .DS_Store
-Hunk/.config/hunk/state.json
-Herdr/.config/herdr/*.log
-Herdr/.config/herdr/.plugins.lock
-Herdr/.config/herdr/release-notes.json
