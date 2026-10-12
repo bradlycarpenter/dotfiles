@@ -1,4 +1,4 @@
-theme = "github-light-default"
+theme = "terminal"
 mode = "stack"
 vcs = "git"          # git, jj, sl
 watch = true
