@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_PLUGIN_DIRS": "~/.claude/mods/herdr-theme-sync"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
@@ -26,6 +29,7 @@
     "context7@claude-plugins-official": true
   },
   "outputStyle": "Concise",
+  "feedbackDrafts": "off",
   "effortLevel": "medium",
   "modelSettings": {
     "claude-opus-5": {
@@ -40,6 +44,5 @@
   "theme": "auto",
   "preferredNotifChannel": "terminal_bell",
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true,
-  "feedbackDrafts": "off"
+  "agentPushNotifEnabled": true
 }

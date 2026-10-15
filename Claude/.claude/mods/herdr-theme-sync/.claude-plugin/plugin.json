@@ -1,0 +1,1 @@
+{ "name": "herdr-theme-sync", "version": "0.1.0", "description": "Re-checks the terminal background under herdr so the auto theme catches changes made while detached" }

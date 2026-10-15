@@ -2,7 +2,7 @@ onboarding = false
 
 [theme]
 name = "terminal"
-auto_switch = false
+auto_switch = true
 
 [ui]
 agent_panel_sort = "spaces"
