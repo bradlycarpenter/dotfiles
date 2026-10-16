@@ -22,17 +22,6 @@ export const until = (resetsAt: string | undefined, now: number) => {
   return `${Math.round(minutes / 1440)}d`
 }
 
-// The engine draws the permission-mode label (not reported to SessionMode hooks)
-// before this row and a trailing item of its own after it, all on one line; a
-// row that leaves the trailing item no room wraps it onto a second line as a
-// stray `·`. The mode label is assumed when the hint mentions shift+tab, sized
-// for "⏵⏵ accept edits on"; the wider bypass-permissions label still overflows.
-const MODE_LABEL = 20
-const ROW_SLACK = 6
-
-export const rowWidthFor = (columns: number, hint: string) =>
-  Math.max(0, columns - ROW_SLACK - (hint.includes('shift+tab') ? MODE_LABEL : 0))
-
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     const result = await next(e)
@@ -46,35 +35,37 @@ export const register: Register = on => {
     return next(e)
   })
 
-  on('ui.render', { component: 'PromptHint' }, async ($, e, next) => {
+  on('ui.render', { component: 'SessionMode' }, async ($, e, next) => {
     const current = await read($, meters)
     if (current.length === 0) return next(e)
 
     const { Box, Text } = $.ui.resolve(e)
     const now = await $.clock.now()
     const width = 10
-    const rowWidth = e.viewport ? rowWidthFor(e.viewport.columns, e.props.hint) : undefined
 
+    // Absolute so the footer never wraps the meters to a row of their own; they
+    // paint over the hint's tail when narrow, hence spaces rather than gaps.
+    // right={-2} cancels the footer's right padding.
     return (
-      <Box flexDirection="row" columnGap={3} height={1} overflow="hidden" width={rowWidth}>
-        <Box flexGrow={rowWidth === undefined ? 0 : 1} flexShrink={1} minWidth={0}>
-          {e.props.hint.trim() ? <Text dimColor wrap="truncate-end">{e.props.hint}</Text> : null}
+      <Box width={0} height={1}>
+        <Box position="absolute" right={-2} height={1} flexShrink={0}>
+          <Text wrap="truncate-start">
+            {e.props.modes.length ? <Text dimColor>{`   ${e.props.modes.join(' & ')}`}</Text> : null}
+            {current.map(m => {
+              const filled = Math.round((Math.min(m.percent, 100) / 100) * width)
+              const reset = until(m.resetsAt, now)
+              return (
+                <Text key={m.label}>
+                  <Text dimColor>{`   ${m.label} `}</Text>
+                  <Text color={tone(m.percent)}>{'━'.repeat(filled)}</Text>
+                  <Text color="subtle">{'─'.repeat(width - filled)}</Text>
+                  <Text color={tone(m.percent)} bold={m.percent >= 85}>{` ${Math.round(m.percent)}%`}</Text>
+                  {reset ? <Text dimColor>{` 󰦛 ${reset}`}</Text> : null}
+                </Text>
+              )
+            })}
+          </Text>
         </Box>
-        {current.map(m => {
-          const filled = Math.round((Math.min(m.percent, 100) / 100) * width)
-          const reset = until(m.resetsAt, now)
-          return (
-            <Box key={m.label} flexDirection="row" columnGap={1} flexShrink={0}>
-              <Text dimColor>{m.label}</Text>
-              <Text>
-                <Text color={tone(m.percent)}>{'━'.repeat(filled)}</Text>
-                <Text color="subtle">{'─'.repeat(width - filled)}</Text>
-              </Text>
-              <Text color={tone(m.percent)} bold={m.percent >= 85}>{Math.round(m.percent)}%</Text>
-              {reset ? <Text dimColor>󰦛 {reset}</Text> : null}
-            </Box>
-          )
-        })}
       </Box>
     )
   })

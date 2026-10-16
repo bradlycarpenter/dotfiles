@@ -1,5 +1,5 @@
 import { expect, test } from 'claude-code/testing'
-import { rowWidthFor, toMeters, tone, until } from './register'
+import { toMeters, tone, until } from './register'
 
 test('builds meters from context and rate limits', () => {
   const m = toMeters({ window: 200000, tokens: 84000, percent: 42 }, [
@@ -19,9 +19,4 @@ test('tones and reset countdowns', () => {
   expect(until('2026-10-16T12:45:00Z', now)).toBe('45m')
   expect(until('2026-10-16T15:05:00Z', now)).toBe('3h05')
   expect(until('2026-10-20T12:00:00Z', now)).toBe('4d')
-})
-
-test('row leaves room for the mode label and trailing item', () => {
-  expect(rowWidthFor(125, '(shift+tab to cycle) · ← for agents')).toBe(99)
-  expect(rowWidthFor(125, '? for shortcuts')).toBe(119)
 })
