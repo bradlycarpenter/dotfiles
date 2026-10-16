@@ -14,6 +14,8 @@ export const toMeters = (context: SessionContextUsage, rateLimits: readonly Sess
 
 export const tone = (percent: number) => (percent >= 85 ? 'error' : percent >= 60 ? 'warning' : 'success')
 
+const NARROW_COLUMNS = 80
+
 export const until = (resetsAt: string | undefined, now: number) => {
   if (!resetsAt) return ''
   const minutes = Math.max(0, Math.round((Date.parse(resetsAt) - now) / 60000))
@@ -42,6 +44,7 @@ export const register: Register = on => {
     const { Box, Text } = $.ui.resolve(e)
     const now = await $.clock.now()
     const width = 10
+    const showReset = (e.viewport?.columns ?? Infinity) >= NARROW_COLUMNS
 
     // Absolute so the footer never wraps the meters to a row of their own; they
     // paint over the hint's tail when narrow, hence spaces rather than gaps.
@@ -53,7 +56,7 @@ export const register: Register = on => {
             {e.props.modes.length ? <Text dimColor>{`   ${e.props.modes.join(' & ')}`}</Text> : null}
             {current.map(m => {
               const filled = Math.round((Math.min(m.percent, 100) / 100) * width)
-              const reset = until(m.resetsAt, now)
+              const reset = showReset ? until(m.resetsAt, now) : ''
               return (
                 <Text key={m.label}>
                   <Text dimColor>{`   ${m.label} `}</Text>
