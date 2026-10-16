@@ -1,6 +1,6 @@
 {
   "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "~/.claude/mods/herdr-theme-sync"
+    "CLAUDE_CODE_PLUGIN_DIRS": "~/.claude/mods/herdr-theme-sync:~/.claude/mods/usage-meters"
   },
   "attribution": {
     "commit": "",
@@ -19,10 +19,6 @@
         ]
       }
     ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "zsh ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
